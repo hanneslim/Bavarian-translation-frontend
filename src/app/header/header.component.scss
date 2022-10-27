@@ -1,0 +1,27 @@
+.header-bar {
+  width: 100vw;
+  display: flex;
+  z-index: 100;
+  position: sticky;
+  align-items: center;
+  background-color: white;
+  height: 4.8rem;
+  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
+}
+
+.logo-container {
+  width: 15rem;
+  display: flex;
+  padding-left: 0.6rem;
+  .app-icon {
+    width: 12rem;
+    :hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.menu-container {
+  display: flex;
+  gap: 3rem;
+}
