@@ -1,0 +1,49 @@
+.footer-bar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  align-items: center;
+
+  height: 11rem;
+  background-image: url("../../assets/Flag_of_Bavaria.svg");
+}
+
+.grey-box {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  height: 11rem;
+  opacity: 0.8;
+}
+
+.footer-logo {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer-line {
+  margin-left: 8rem;
+  margin-right: 8rem;
+  margin-top: 0.5rem;
+  border: none;
+  height: 1px;
+  background-color: #d9dbe1;
+}
+
+.logo {
+  width: 10%;
+  margin-bottom: -1rem;
+}
+
+.filter-white {
+  filter: brightness(0) invert(1);
+}
