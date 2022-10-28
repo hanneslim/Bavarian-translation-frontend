@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { UntypedFormControl } from '@angular/forms';
+import { Component, Input } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-text-area[id][control]',
@@ -7,7 +7,7 @@ import { UntypedFormControl } from '@angular/forms';
   styleUrls: ['./text-area.component.scss'],
 })
 export class TextAreaComponent {
-  @Input() control!: UntypedFormControl<string | null>;
+  @Input() control!: FormControl<string | null>;
   @Input() id!: string;
   @Input() label?: string;
   @Input() placeholder = '';
