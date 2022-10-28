@@ -5,10 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { TranslatorComponent } from './translator/translator.component';
-import { DatabaseContributionComponent } from './database-contribution/database-contribution.component';
+import { TranslatorComponent } from './pages/translator/translator.component';
+import { DatabaseContributionComponent } from './pages/database-contribution/database-contribution.component';
 import { TextAreaComponent } from './shared/ui/text-area/text-area.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     DatabaseContributionComponent,
     TextAreaComponent,
   ],
-  imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
+    InputTextareaModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

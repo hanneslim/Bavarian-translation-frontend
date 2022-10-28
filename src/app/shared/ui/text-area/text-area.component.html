@@ -1,9 +1,11 @@
 <label *ngIf="label" [for]="id">{{ label }}</label>
 <textarea
   [id]="id"
+  class="w-full h-16rem text-area-style"
   [formControl]="control"
   autocomplete="off"
   pInputTextarea
   [attr.disabled]="disabled"
   [placeholder]="placeholder"
+  [autoResize]="true"
 ></textarea>

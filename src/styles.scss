@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-@import "node_modules/primeflex/primeflex";
+@import "./../node_modules/primeflex/primeflex";
+@import "./../node_modules/primeng/resources/primeng.min.css";
+@import "./../node_modules/primeicons/primeicons.css";
 
 @font-face {
   font-family: Helvetica;
@@ -14,4 +16,19 @@ a {
 body {
   font-family: Helvetica;
   margin: 0;
+}
+
+.page-container {
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+
+textarea {
+  outline: none;
+  padding: 1rem;
+  font-family: "Helvetica";
+  font-size: larger;
+  font-style: normal;
+  font-weight: 400;
+  cursor: text;
 }
