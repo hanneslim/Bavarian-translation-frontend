@@ -7,6 +7,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { TranslatorComponent } from './translator/translator.component';
 import { DatabaseContributionComponent } from './database-contribution/database-contribution.component';
+import { TextAreaComponent } from './shared/ui/text-area/text-area.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,13 +16,11 @@ import { DatabaseContributionComponent } from './database-contribution/database-
     HeaderComponent,
     FooterComponent,
     TranslatorComponent,
-    DatabaseContributionComponent
+    DatabaseContributionComponent,
+    TextAreaComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, ReactiveFormsModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,0 +1,9 @@
+<label *ngIf="label" [for]="id">{{ label }}</label>
+<textarea
+  [id]="id"
+  [formControl]="control"
+  autocomplete="off"
+  pInputTextarea
+  [attr.disabled]="disabled"
+  [placeholder]="placeholder"
+></textarea>
