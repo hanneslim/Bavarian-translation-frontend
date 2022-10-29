@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, NonNullableFormBuilder } from '@angular/forms';
+import { PostTranslationsService } from 'src/app/shared/services/api/post-translations.service';
 
 type TranslatorFormType = FormGroup<{
   germanText: FormControl<string>;
@@ -17,5 +18,19 @@ export class TranslatorComponent {
     bavarianText: this._fb.control<string>(''),
   });
 
-  constructor(private _fb: NonNullableFormBuilder) {}
+  constructor(
+    private _fb: NonNullableFormBuilder,
+    private _postTranslationService: PostTranslationsService
+  ) {}
+
+  public sendTranslationRequest() {
+    const text = this.translatorForm.controls.germanText.getRawValue();
+    this._postTranslationService
+      .postTranslation(text)
+      .subscribe((translation) => {
+        this.translatorForm.controls.bavarianText.setValue(
+          translation.bavarianText
+        );
+      });
+  }
 }
