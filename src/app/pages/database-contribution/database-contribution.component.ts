@@ -18,6 +18,29 @@ type GeneralsContriFormType = FormGroup<{
   land: FormControl<string>;
 }>;
 
+const landOptions = [
+  { id: 'deBY', label: 'Bayern' },
+  { id: 'at', label: 'Österreich' },
+  { id: 'ch', label: 'Schweiz' },
+  { id: 'lu', label: 'Luxemburg' },
+  { id: 'deBW', label: 'Baden-Württemberg' },
+  { id: 'deSL', label: 'Saarland' },
+  { id: 'deBE', label: 'Berlin' },
+  { id: 'deHE', label: 'Hessen' },
+  { id: 'deTÜ', label: 'Tühringen' },
+  { id: 'deSC', label: 'Sachsen' },
+  { id: 'deNS', label: 'Niedersachsen' },
+  { id: 'deMV', label: 'Mecklenburg-Vorpommern' },
+  { id: 'deHH', label: 'Hamburg' },
+  { id: 'deBR', label: 'Bremen' },
+  { id: 'deNW', label: 'Nord-Rhein-Westfalen' },
+  { id: 'deSH', label: 'Schleswig-Holstein' },
+  { id: 'deBB', label: 'Brandenburg' },
+  { id: 'deSA', label: 'Sachsen-Anhalt' },
+  { id: 'deRP', label: 'Rheinland-Pfalz' },
+  { id: 'unknown', label: 'Sonstiges' },
+];
+
 @Component({
   selector: 'app-database-contribution',
   templateUrl: './database-contribution.component.html',
@@ -41,5 +64,6 @@ export class DatabaseContributionComponent {
     land: this._fb.control<string>(''),
   });
 
+  public landOptions = landOptions;
   constructor(private _fb: NonNullableFormBuilder) {}
 }

@@ -11,6 +11,6 @@ export class DropdownComponent {
   @Input() label!: string;
   @Input() placeholder = '';
   @Input() disabled = false;
-  @Input() showClear = true;
+  @Input() showClear = false;
   @Input() options!: Record<string, string>[];
 }

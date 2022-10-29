@@ -18,6 +18,7 @@ import { ButtonComponent } from './shared/ui/button/button.component';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
 import { TabViewModule } from 'primeng/tabview';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { TabViewModule } from 'primeng/tabview';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
