@@ -15,7 +15,9 @@ type PostTranslationResponse = {
 export class PostTranslationsService {
   constructor(private _http: HttpClient) {}
 
-  postTranslation(germanText: string): Observable<PostTranslationResponse> {
+  public postTranslation(
+    germanText: string
+  ): Observable<PostTranslationResponse> {
     return this._http.post<PostTranslationResponse>(
       'https://bavarian-translator.herokuapp.com/text/',
       {
