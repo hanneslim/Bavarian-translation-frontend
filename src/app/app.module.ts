@@ -19,6 +19,8 @@ import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
 import { TabViewModule } from 'primeng/tabview';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ImpressumComponent } from './pages/legal-notice/impressum/impressum.component';
+import { PrivacyPolicyComponent } from './pages/legal-notice/privacy-policy/privacy-policy.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     InputTextComponent,
     DropdownComponent,
     ButtonComponent,
+    ImpressumComponent,
+    PrivacyPolicyComponent,
   ],
   imports: [
     BrowserModule,
