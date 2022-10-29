@@ -1,8 +1,10 @@
-<p-dropdown
-  [disabled]="disabled"
-  [options]="options"
-  [formControl]="control"
-  [placeholder]="placeholder"
-  [optionLabel]="label"
-  [showClear]="showClear"
-></p-dropdown>
+<div style="display: grid">
+  <label class="mb-1">{{ label }}</label>
+  <p-dropdown
+    [disabled]="disabled"
+    [options]="options"
+    [formControl]="control"
+    [placeholder]="placeholder"
+    [showClear]="showClear"
+  ></p-dropdown>
+</div>

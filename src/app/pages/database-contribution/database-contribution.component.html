@@ -1,44 +1,73 @@
 <div class="page-container">
   <h1>Mithelfen den Übersetzer zu verbessern</h1>
 
-  <div>
+  <div class="flex w-full gap-3 pb-4 pt-4">
+    <app-input-text
+      class="w-full"
+      [id]="'dialect'"
+      [label]="'Dialket'"
+      [control]="generalsContriForm.controls.dialect"
+    ></app-input-text>
+    <app-input-text
+      class="w-full"
+      [id]="'region'"
+      [label]="'Region'"
+      [control]="generalsContriForm.controls.region"
+    ></app-input-text>
+    <app-dropdown
+      class="w-full"
+      [options]="[{ test: 'test' }]"
+      [label]="'Land oder Bundesland'"
+      [control]="generalsContriForm.controls.land"
+    ></app-dropdown>
+  </div>
+
+  <div class="pb-6">
     <p-tabView class="tab-view">
       <p-tabPanel header="Einzelne Wörter">
-        <app-input-text
-          [id]="'german-word'"
-          [control]="wordContriForm.controls.germanWord"
-          [label]="'Hochdeutsch'"
-        ></app-input-text>
-        <app-input-text
-          [id]="'bavarian-word'"
-          [control]="wordContriForm.controls.bavarianWord"
-          [label]="'Dialekt'"
-        ></app-input-text>
-        <app-text-area
-          [id]="'description'"
-          [control]="wordContriForm.controls.description"
-          [label]="'Beschreibung (optional)'"
-        ></app-text-area>
+        <div class="flex gap-4">
+          <div class="w-full">
+            <app-input-text
+              [id]="'german-word'"
+              [control]="wordContriForm.controls.germanWord"
+              [label]="'Hochdeutsch'"
+            ></app-input-text>
+            <div class="pt-5">
+              <app-input-text
+                [id]="'bavarian-word'"
+                [control]="wordContriForm.controls.bavarianWord"
+                [label]="'Dialekt'"
+              ></app-input-text>
+            </div>
+          </div>
+          <div class="w-full">
+            <app-text-area
+              [id]="'description'"
+              [control]="wordContriForm.controls.description"
+              [label]="'Beschreibung (optional)'"
+            ></app-text-area>
+          </div>
+        </div>
       </p-tabPanel>
       <p-tabPanel header="Ganzer Text">
-        <div class="w-full flex">
+        <div class="w-full flex gap-5">
           <div class="w-full">
-            <h2>Hochdeutsch</h2>
+            <h3>Hochdeutsch:</h3>
             <app-text-area
               class="w-full"
               [id]="'german-text-area'"
               [control]="textContriForm.controls.germanText"
-              [placeholder]="'Hochdeutsch hier eingeben oder einfügen.'"
+              [placeholder]="'Hochdeutschen Text hier eingeben...'"
             ></app-text-area>
           </div>
 
           <div class="w-full">
-            <h2>Bairisch</h2>
+            <h3>Dialekt:</h3>
             <app-text-area
               class="w-full output-text-area"
-              [id]="'bavarian-text-area'"
+              [id]="'dialect-text-area'"
               [control]="textContriForm.controls.bavarianText"
-              [placeholder]="'Bairisch hier eingeben oder einfügen.'"
+              [placeholder]="'Dialekt Übersetzung hier eingeben...'"
             ></app-text-area>
           </div>
         </div>
