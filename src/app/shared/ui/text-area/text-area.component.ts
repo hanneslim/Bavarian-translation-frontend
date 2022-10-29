@@ -11,5 +11,5 @@ export class TextAreaComponent {
   @Input() id!: string;
   @Input() label?: string;
   @Input() placeholder = '';
-  @Input() disabled?: boolean;
+  @Input() disabled = false;
 }

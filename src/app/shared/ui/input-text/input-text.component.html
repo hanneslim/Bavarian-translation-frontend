@@ -1,0 +1,9 @@
+<label *ngIf="label" [for]="id">{{ label }}</label>
+<input
+  type="text"
+  [id]="id"
+  [disabled]="disabled"
+  pInputText
+  [placeholder]="placeholder"
+  [formControl]="control"
+/>

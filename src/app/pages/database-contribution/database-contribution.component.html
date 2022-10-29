@@ -1,1 +1,48 @@
-<p>database-contribution works!</p>
+<div class="page-container">
+  <h1>Mithelfen den Übersetzer zu verbessern</h1>
+
+  <div>
+    <p-tabView class="tab-view">
+      <p-tabPanel header="Einzelne Wörter">
+        <app-input-text
+          [id]="'german-word'"
+          [control]="wordContriForm.controls.germanWord"
+          [label]="'Hochdeutsch'"
+        ></app-input-text>
+        <app-input-text
+          [id]="'bavarian-word'"
+          [control]="wordContriForm.controls.bavarianWord"
+          [label]="'Dialekt'"
+        ></app-input-text>
+        <app-text-area
+          [id]="'description'"
+          [control]="wordContriForm.controls.description"
+          [label]="'Beschreibung (optional)'"
+        ></app-text-area>
+      </p-tabPanel>
+      <p-tabPanel header="Ganzer Text">
+        <div class="w-full flex">
+          <div class="w-full">
+            <h2>Hochdeutsch</h2>
+            <app-text-area
+              class="w-full"
+              [id]="'german-text-area'"
+              [control]="textContriForm.controls.germanText"
+              [placeholder]="'Hochdeutsch hier eingeben oder einfügen.'"
+            ></app-text-area>
+          </div>
+
+          <div class="w-full">
+            <h2>Bairisch</h2>
+            <app-text-area
+              class="w-full output-text-area"
+              [id]="'bavarian-text-area'"
+              [control]="textContriForm.controls.bavarianText"
+              [placeholder]="'Bairisch hier eingeben oder einfügen.'"
+            ></app-text-area>
+          </div>
+        </div>
+      </p-tabPanel>
+    </p-tabView>
+  </div>
+</div>
