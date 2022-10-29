@@ -2,6 +2,16 @@
   .text-area-style {
     background-color: #f4f7fd;
     box-shadow: none;
+    border-radius: 0.25rem;
+    border: none;
+  }
+}
+
+:host ::ng-deep .input-text-area {
+  .text-area-style {
+    box-shadow: 0px 4px 9px 1px rgb(0 0 0 / 10%);
+    border-radius: 0.25rem;
+    border: none;
   }
 }
 
