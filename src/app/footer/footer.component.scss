@@ -2,7 +2,6 @@
   position: sticky;
   width: 100%;
   align-items: center;
-
   height: 11rem;
   background-image: url("../../assets/Flag_of_Bavaria.svg");
 }
@@ -42,4 +41,69 @@
 
 .filter-white {
   filter: brightness(0) invert(1);
+}
+
+.copyright {
+  display: flex;
+  margin-left: 8rem;
+  color: #d9dbe1;
+  margin-top: 1rem;
+}
+
+@media screen and (max-width: 840px) {
+  .logo {
+    width: 20%;
+    margin-bottom: -2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .logo {
+    width: 25%;
+  }
+  .footer-bar {
+    height: 9rem;
+  }
+
+  .grey-box {
+    height: 9rem;
+  }
+
+  .footer-links {
+    height: 2.5rem;
+  }
+
+  .footer-line {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+
+  .copyright {
+    margin-left: 4rem;
+    font-size: small;
+    margin-top: 0.6rem;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .logo {
+    width: 25%;
+    margin-bottom: -2rem;
+  }
+  .footer-bar {
+    height: 7rem;
+  }
+
+  .grey-box {
+    height: 7rem;
+  }
+
+  .footer-links {
+    font-size: x-small;
+    padding-top: 0.75rem;
+  }
+
+  .copyright {
+    font-size: x-small;
+  }
 }

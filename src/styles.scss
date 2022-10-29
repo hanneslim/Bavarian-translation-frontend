@@ -26,6 +26,20 @@ body {
   margin-right: 10rem;
 }
 
+@media screen and (max-width: 840px) {
+  .page-container {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .page-container {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
 textarea {
   outline: none;
   padding: 1rem;
