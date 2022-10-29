@@ -10,6 +10,8 @@ import { DatabaseContributionComponent } from './pages/database-contribution/dat
 import { TextAreaComponent } from './shared/ui/text-area/text-area.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { ButtonModule } from 'primeng/button';
+import { IconButtonComponent } from './shared/ui/icon-button/icon-button.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     TranslatorComponent,
     DatabaseContributionComponent,
     TextAreaComponent,
+    IconButtonComponent,
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
     InputTextareaModule,
+    ButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

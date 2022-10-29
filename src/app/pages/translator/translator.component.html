@@ -1,7 +1,10 @@
 <div class="page-container">
-  <h1>Deutsch-Bairisch Übersetzer</h1>
+  <h1>
+    <i style="font-size: inherit" class="pi pi-comments"></i> Deutsch-Bairisch
+    Übersetzer
+  </h1>
 
-  <div class="w-full flex gap-4">
+  <div class="w-full flex">
     <div class="w-full">
       <h2>Hochdeutsch</h2>
       <app-text-area
@@ -10,6 +13,12 @@
         [control]="translatorForm.controls.germanText"
         [placeholder]="'Text hier eingeben oder einfügen.'"
       ></app-text-area>
+    </div>
+    <div class="my-auto pt-7">
+      <app-icon-button
+        [icon]="'pi pi-angle-right'"
+        class="translation-button"
+      ></app-icon-button>
     </div>
 
     <div class="w-full">
@@ -21,7 +30,7 @@
       ></app-text-area>
     </div>
   </div>
-  <h3>Wie es funktioniert</h3>
+  <h3 class="pt-4">Wie es funktioniert</h3>
   <p>
     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
     eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam

@@ -4,3 +4,19 @@
     box-shadow: none;
   }
 }
+
+:host ::ng-deep .translation-button {
+  .p-button {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    background-color: #008ed1;
+    border-radius: 0.25rem;
+    border-color: #008ed1;
+
+    span {
+      font-size: 1.5rem;
+    }
+  }
+}
