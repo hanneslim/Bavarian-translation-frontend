@@ -1,15 +1,27 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, NonNullableFormBuilder } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  NonNullableFormBuilder,
+  Validators,
+} from '@angular/forms';
+import { takeUntil } from 'rxjs/operators';
+import { Destroyable } from 'src/app/shared/classes/destroyable';
+import {
+  AddDialectProposalsService,
+  PutAddDialectWord,
+  PutAddDialectText,
+} from 'src/app/shared/services/api/add-dialect-proposals.service';
 
 type WordContriFormType = FormGroup<{
   germanWord: FormControl<string>;
-  bavarianWord: FormControl<string>;
+  dialectWord: FormControl<string>;
   description: FormControl<string>;
 }>;
 
 type TextContriFormType = FormGroup<{
   germanText: FormControl<string>;
-  bavarianText: FormControl<string>;
+  dialectText: FormControl<string>;
 }>;
 
 type GeneralsContriFormType = FormGroup<{
@@ -46,24 +58,62 @@ const landOptions = [
   templateUrl: './database-contribution.component.html',
   styleUrls: ['./database-contribution.component.scss'],
 })
-export class DatabaseContributionComponent {
+export class DatabaseContributionComponent extends Destroyable {
   public wordContriForm: WordContriFormType = this._fb.group({
-    germanWord: this._fb.control<string>(''),
-    bavarianWord: this._fb.control<string>(''),
-    description: this._fb.control<string>(''),
+    germanWord: this._fb.control<string>('', Validators.required),
+    dialectWord: this._fb.control<string>('', Validators.required),
+    description: this._fb.control<string>('', Validators.required),
   });
 
   public textContriForm: TextContriFormType = this._fb.group({
-    germanText: this._fb.control<string>(''),
-    bavarianText: this._fb.control<string>(''),
+    germanText: this._fb.control<string>('', Validators.required),
+    dialectText: this._fb.control<string>('', Validators.required),
   });
 
   public generalsContriForm: GeneralsContriFormType = this._fb.group({
-    dialect: this._fb.control<string>(''),
-    region: this._fb.control<string>(''),
-    land: this._fb.control<string>(''),
+    dialect: this._fb.control<string>('', Validators.required),
+    region: this._fb.control<string>('', Validators.required),
+    land: this._fb.control<string>('deBY', Validators.required),
   });
 
   public landOptions = landOptions;
-  constructor(private _fb: NonNullableFormBuilder) {}
+  constructor(
+    private _fb: NonNullableFormBuilder,
+    private _addDialectProposalService: AddDialectProposalsService
+  ) {
+    super();
+  }
+
+  public sendDialectWordProposal() {
+    const dialectWord: PutAddDialectWord = {
+      dialect: this.generalsContriForm.controls.dialect.value,
+      region: this.generalsContriForm.controls.region.value,
+      land: this.generalsContriForm.controls.land.value,
+      germanWord: this.wordContriForm.controls.germanWord.value,
+      dialectWord: this.wordContriForm.controls.dialectWord.value,
+      description: this.wordContriForm.controls.description.value,
+    };
+    this._addDialectProposalService
+      .putAddDialectWord(dialectWord)
+      .pipe(takeUntil(this._destroy))
+      .subscribe(() => {
+        this.wordContriForm.reset();
+      });
+  }
+
+  public sendDialectTextProposal() {
+    const dialectText: PutAddDialectText = {
+      dialect: this.generalsContriForm.controls.dialect.value,
+      region: this.generalsContriForm.controls.region.value,
+      land: this.generalsContriForm.controls.land.value,
+      germanText: this.textContriForm.controls.germanText.value,
+      dialectText: this.textContriForm.controls.dialectText.value,
+    };
+    this._addDialectProposalService
+      .putAddDialectText(dialectText)
+      .pipe(takeUntil(this._destroy))
+      .subscribe(() => {
+        this.textContriForm.reset();
+      });
+  }
 }

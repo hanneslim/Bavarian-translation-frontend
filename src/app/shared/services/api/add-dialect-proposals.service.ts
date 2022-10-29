@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-export type PostAddDialectWord = {
+export type PutAddDialectWord = {
   dialect: string;
   region: string;
   land: string;
@@ -11,7 +11,7 @@ export type PostAddDialectWord = {
   description: string;
 };
 
-export type PostAddDialectText = {
+export type PutAddDialectText = {
   dialect: string;
   region: string;
   land: string;
@@ -25,19 +25,19 @@ export type PostAddDialectText = {
 export class AddDialectProposalsService {
   constructor(private _http: HttpClient) {}
 
-  public postAddDialectText(
-    addDialectText: PostAddDialectText
+  public putAddDialectText(
+    addDialectText: PutAddDialectText
   ): Observable<string> {
-    return this._http.post<string>(
+    return this._http.put<string>(
       'https://bavarian-translator.herokuapp.com/save-dialect-text/',
       addDialectText
     );
   }
 
-  public postAddDialectWord(
-    addDialectWord: PostAddDialectWord
+  public putAddDialectWord(
+    addDialectWord: PutAddDialectWord
   ): Observable<string> {
-    return this._http.post<string>(
+    return this._http.put<string>(
       'https://bavarian-translator.herokuapp.com/save-dialect-word/',
       addDialectWord
     );
