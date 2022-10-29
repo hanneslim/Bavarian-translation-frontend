@@ -50,6 +50,8 @@
         </div>
         <div class="flex justify-content-end pt-4">
           <app-button
+            [form]="wordContriForm"
+            [disabled]="!generalsContriForm.valid"
             [label]="'Senden'"
             (clickEvent)="sendDialectWordProposal()"
           ></app-button>
@@ -79,7 +81,9 @@
         </div>
         <div class="flex justify-content-end pt-4">
           <app-button
+            [form]="textContriForm"
             [label]="'Senden'"
+            [disabled]="!generalsContriForm.valid"
             (clickEvent)="sendDialectTextProposal()"
           ></app-button>
         </div>

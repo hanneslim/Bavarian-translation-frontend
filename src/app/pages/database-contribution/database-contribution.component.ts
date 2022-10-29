@@ -62,7 +62,7 @@ export class DatabaseContributionComponent extends Destroyable {
   public wordContriForm: WordContriFormType = this._fb.group({
     germanWord: this._fb.control<string>('', Validators.required),
     dialectWord: this._fb.control<string>('', Validators.required),
-    description: this._fb.control<string>('', Validators.required),
+    description: this._fb.control<string>(''),
   });
 
   public textContriForm: TextContriFormType = this._fb.group({
