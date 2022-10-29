@@ -12,6 +12,7 @@ import {
   PutAddDialectWord,
   PutAddDialectText,
 } from 'src/app/shared/services/api/add-dialect-proposals.service';
+import { MessageService } from 'primeng/api';
 
 type WordContriFormType = FormGroup<{
   germanWord: FormControl<string>;
@@ -57,6 +58,7 @@ const landOptions = [
   selector: 'app-database-contribution',
   templateUrl: './database-contribution.component.html',
   styleUrls: ['./database-contribution.component.scss'],
+  providers: [MessageService],
 })
 export class DatabaseContributionComponent extends Destroyable {
   public wordContriForm: WordContriFormType = this._fb.group({
@@ -79,7 +81,8 @@ export class DatabaseContributionComponent extends Destroyable {
   public landOptions = landOptions;
   constructor(
     private _fb: NonNullableFormBuilder,
-    private _addDialectProposalService: AddDialectProposalsService
+    private _addDialectProposalService: AddDialectProposalsService,
+    private _messageService: MessageService
   ) {
     super();
   }
@@ -96,8 +99,16 @@ export class DatabaseContributionComponent extends Destroyable {
     this._addDialectProposalService
       .putAddDialectWord(dialectWord)
       .pipe(takeUntil(this._destroy))
-      .subscribe(() => {
+      .subscribe((result) => {
         this.wordContriForm.reset();
+        if (result) {
+          console.log(result);
+          this._messageService.add({
+            severity: 'success',
+            summary: 'Erfolg',
+            detail: result.message,
+          });
+        }
       });
   }
 
@@ -112,8 +123,15 @@ export class DatabaseContributionComponent extends Destroyable {
     this._addDialectProposalService
       .putAddDialectText(dialectText)
       .pipe(takeUntil(this._destroy))
-      .subscribe(() => {
+      .subscribe((result) => {
         this.textContriForm.reset();
+        if (result) {
+          this._messageService.add({
+            severity: 'success',
+            summary: 'Erfolg',
+            detail: result.message,
+          });
+        }
       });
   }
 }

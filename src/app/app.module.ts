@@ -21,6 +21,7 @@ import { TabViewModule } from 'primeng/tabview';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ImpressumComponent } from './pages/legal-notice/impressum/impressum.component';
 import { PrivacyPolicyComponent } from './pages/legal-notice/privacy-policy/privacy-policy.component';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { PrivacyPolicyComponent } from './pages/legal-notice/privacy-policy/priv
     DropdownModule,
     InputTextModule,
     TabViewModule,
+    ToastModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

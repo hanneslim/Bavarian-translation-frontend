@@ -27,8 +27,8 @@ export class AddDialectProposalsService {
 
   public putAddDialectText(
     addDialectText: PutAddDialectText
-  ): Observable<string> {
-    return this._http.put<string>(
+  ): Observable<{ message: string }> {
+    return this._http.put<{ message: string }>(
       'https://bavarian-translator.herokuapp.com/save-dialect-text/',
       addDialectText
     );
@@ -36,8 +36,8 @@ export class AddDialectProposalsService {
 
   public putAddDialectWord(
     addDialectWord: PutAddDialectWord
-  ): Observable<string> {
-    return this._http.put<string>(
+  ): Observable<{ message: string }> {
+    return this._http.put<{ message: string }>(
       'https://bavarian-translator.herokuapp.com/save-dialect-word/',
       addDialectWord
     );

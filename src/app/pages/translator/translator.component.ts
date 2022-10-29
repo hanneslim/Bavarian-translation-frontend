@@ -20,6 +20,8 @@ export class TranslatorComponent extends Destroyable {
     bavarianText: this._fb.control<string>(''),
   });
 
+  public activateSpinner = false;
+
   constructor(
     private _fb: NonNullableFormBuilder,
     private _postTranslationService: PostTranslationsService
@@ -28,6 +30,7 @@ export class TranslatorComponent extends Destroyable {
   }
 
   public sendTranslationRequest() {
+    this.activateSpinner = true;
     const text = this.translatorForm.controls.germanText.getRawValue();
     this._postTranslationService
       .postTranslation(text)
@@ -36,6 +39,7 @@ export class TranslatorComponent extends Destroyable {
         this.translatorForm.controls.bavarianText.setValue(
           translation.bavarianText
         );
+        this.activateSpinner = false;
       });
   }
 }
