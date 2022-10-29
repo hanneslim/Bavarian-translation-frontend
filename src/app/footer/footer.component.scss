@@ -1,7 +1,5 @@
 .footer-bar {
-  position: fixed;
-  left: 0;
-  bottom: 0;
+  position: sticky;
   width: 100%;
   align-items: center;
 
@@ -10,9 +8,7 @@
 }
 
 .grey-box {
-  position: fixed;
-  left: 0;
-  bottom: 0;
+  position: sticky;
   width: 100%;
   background-color: black;
   height: 11rem;
