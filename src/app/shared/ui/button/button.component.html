@@ -1,1 +1,8 @@
-<p>button works!</p>
+<p-button
+  [label]="label"
+  [type]="type"
+  [style]="style"
+  [disabled]="isDisabled()"
+  (onClick)="clickEvent.emit($event)"
+>
+</p-button>
