@@ -14,6 +14,10 @@ a {
   text-decoration: none;
 }
 
+html,
+body {
+  height: 77.3%;
+}
 body {
   font-family: Helvetica;
   margin: 0;
@@ -22,6 +26,7 @@ body {
 }
 
 .page-container {
+  min-height: 77.3%;
   margin-left: 7rem;
   margin-right: 7rem;
 }
