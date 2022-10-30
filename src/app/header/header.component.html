@@ -1,6 +1,6 @@
 <div class="header-bar">
   <div class="logo-container">
-    <a routerLink="/"
+    <a [skipLocationChange]="true" routerLink="/"
       ><img
         class="app-icon"
         src="../../assets/logo/DialektL-Logo-cropped.svg"
@@ -8,7 +8,11 @@
     /></a>
   </div>
   <div class="menu-container">
-    <a routerLink="/"><h4>Übersetzer</h4></a>
-    <h4><a routerLink="/wissen-beitragen">Wissen beitragen</a></h4>
+    <a [skipLocationChange]="true" routerLink="/"><h4>Übersetzer</h4></a>
+    <h4>
+      <a [skipLocationChange]="true" routerLink="/wissen-beitragen"
+        >Wissen beitragen</a
+      >
+    </h4>
   </div>
 </div>
