@@ -26,3 +26,18 @@
   display: flex;
   gap: 3rem;
 }
+
+@media screen and (max-width: 600px) {
+  .logo-container {
+    margin-top: -1rem;
+  }
+  .header-bar {
+    display: block;
+    height: 6.5rem;
+  }
+  .menu-container {
+    gap: 3rem;
+    padding-left: 1rem;
+    margin-top: -2.5rem;
+  }
+}

@@ -23,7 +23,7 @@
     Region gemünzt sind. Bitte beachte, dass alle nachfolgenden Felder
     ausgefüllt werden müssen, die nicht mit "optional" gekennzeichnet sind.
   </p>
-  <div class="flex w-full gap-3 pb-4 pt-4">
+  <div class="w-full gap-3 pb-4 pt-4 general-inputs">
     <app-input-text
       class="w-full"
       [id]="'dialect'"
@@ -47,7 +47,7 @@
   <div class="pb-6">
     <p-tabView class="tab-view">
       <p-tabPanel header="Einzelne Wörter">
-        <div class="flex gap-4">
+        <div class="gap-4 general-inputs">
           <div class="w-full">
             <app-input-text
               [id]="'german-word'"
@@ -70,7 +70,7 @@
             ></app-text-area>
           </div>
         </div>
-        <div class="flex justify-content-end pt-4">
+        <div class="justify-content-end pt-4 flex">
           <app-button
             [form]="wordContriForm"
             [disabled]="!generalsContriForm.valid"
@@ -80,7 +80,7 @@
         </div>
       </p-tabPanel>
       <p-tabPanel header="Ganzer Text">
-        <div class="w-full flex gap-5">
+        <div class="w-full general-inputs gap-5">
           <div class="w-full">
             <app-text-area
               [label]="'Hochdeutsch'"

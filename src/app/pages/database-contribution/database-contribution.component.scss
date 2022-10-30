@@ -39,3 +39,13 @@
     }
   }
 }
+
+.general-inputs {
+  display: flex !important;
+}
+
+@media screen and (max-width: 700px) {
+  .general-inputs {
+    display: block !important;
+  }
+}
