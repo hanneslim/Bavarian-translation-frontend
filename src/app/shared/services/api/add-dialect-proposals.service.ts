@@ -29,7 +29,7 @@ export class AddDialectProposalsService {
     addDialectText: PutAddDialectText
   ): Observable<{ message: string }> {
     return this._http.put<{ message: string }>(
-      'https://bavarian-translator.herokuapp.com/save-dialect-text/',
+      'https://fair-erin-basket-clam.cyclic.app/save-dialect-text/',
       addDialectText
     );
   }
@@ -38,7 +38,7 @@ export class AddDialectProposalsService {
     addDialectWord: PutAddDialectWord
   ): Observable<{ message: string }> {
     return this._http.put<{ message: string }>(
-      'https://bavarian-translator.herokuapp.com/save-dialect-word/',
+      'https://fair-erin-basket-clam.cyclic.app/save-dialect-word/',
       addDialectWord
     );
   }

@@ -19,7 +19,7 @@ export class PostTranslationsService {
     germanText: string
   ): Observable<PostTranslationResponse> {
     return this._http.post<PostTranslationResponse>(
-      'https://bavarian-translator.herokuapp.com/text/',
+      'https://fair-erin-basket-clam.cyclic.app/text/',
       {
         text: germanText,
       }
