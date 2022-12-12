@@ -12,8 +12,13 @@
         [id]="'german-text-area'"
         [control]="translatorForm.controls.germanText"
         [placeholder]="'Text hier eingeben oder einfügen.'"
-        ><i class="pi pi-times icon-style"></i
-      ></app-text-area>
+      >
+        <i
+          *ngIf="translatorForm.controls.germanText.value !== ''"
+          class="pi pi-times icon-style"
+          (click)="deleteText()"
+        ></i>
+      </app-text-area>
     </div>
     <div class="my-auto pt-7">
       <app-icon-button
@@ -36,7 +41,11 @@
         class="w-full output-text-area"
         [id]="'bavarian-text-area'"
         [control]="translatorForm.controls.bavarianText"
-        ><i class="pi pi-copy icon-style"></i
+        ><i
+          *ngIf="translatorForm.controls.bavarianText.value !== ''"
+          class="pi pi-copy icon-style"
+          (click)="copyBavText()"
+        ></i
       ></app-text-area>
     </div>
   </div>

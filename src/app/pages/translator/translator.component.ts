@@ -3,7 +3,6 @@ import { FormControl, FormGroup, NonNullableFormBuilder } from '@angular/forms';
 import { takeUntil } from 'rxjs/operators';
 import { Destroyable } from 'src/app/shared/classes/destroyable';
 import { PostTranslationsService } from 'src/app/shared/services/api/post-translations.service';
-import { Meta, Title } from '@angular/platform-browser';
 
 type TranslatorFormType = FormGroup<{
   germanText: FormControl<string>;
@@ -25,25 +24,9 @@ export class TranslatorComponent extends Destroyable {
 
   constructor(
     private _fb: NonNullableFormBuilder,
-    private _postTranslationService: PostTranslationsService,
-    private _meta: Meta,
-    private _title: Title
+    private _postTranslationService: PostTranslationsService
   ) {
     super();
-    this._meta.addTags([
-      {
-        name: 'description',
-        content:
-          'Deutsch - Bairisch (Bayerisch/Bayrisch) Übersetzer! Auch für Österreich geeignet!',
-      },
-      { name: 'author', content: 'Johannes Limmer' },
-      {
-        name: 'keywords',
-        content:
-          'Bairisch Übersetzer, Bayerisch Übersetzer, Bayrisch Übersetzer',
-      },
-    ]);
-    this._title.setTitle('Bairisch Übersetzer');
   }
 
   public sendTranslationRequest() {
@@ -58,5 +41,19 @@ export class TranslatorComponent extends Destroyable {
         );
         this.activateSpinner = false;
       });
+  }
+
+  public deleteText() {
+    this.translatorForm.controls.germanText.reset();
+    this.translatorForm.controls.bavarianText.reset();
+  }
+
+  public copyBavText() {
+    navigator.clipboard.writeText(
+      this.translatorForm.controls.bavarianText.value
+    );
+    (
+      document.getElementById('bavarian-text-area') as HTMLInputElement
+    ).select();
   }
 }
