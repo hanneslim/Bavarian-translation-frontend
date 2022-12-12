@@ -1,5 +1,6 @@
 <div style="display: grid">
   <h3 class="mb-1" *ngIf="label">{{ label }}</h3>
+  <ng-content></ng-content>
   <textarea
     [id]="id"
     class="w-full h-16rem text-area-style"
