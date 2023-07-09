@@ -22,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ImpressumComponent } from './pages/legal-notice/impressum/impressum.component';
 import { PrivacyPolicyComponent } from './pages/legal-notice/privacy-policy/privacy-policy.component';
 import { ToastModule } from 'primeng/toast';
+import { BookAdComponent } from './shared/ui/book-ad/book-ad.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ToastModule } from 'primeng/toast';
     ButtonComponent,
     ImpressumComponent,
     PrivacyPolicyComponent,
+    BookAdComponent,
   ],
   imports: [
     BrowserModule,

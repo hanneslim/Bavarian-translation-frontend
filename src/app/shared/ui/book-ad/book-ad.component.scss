@@ -1,0 +1,21 @@
+.product-link {
+  width: 20%;
+  cursor: pointer;
+}
+
+.zoom-in img {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.zoom-in img:hover {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 700px) {
+  .product-link {
+    width: 40%;
+  }
+}

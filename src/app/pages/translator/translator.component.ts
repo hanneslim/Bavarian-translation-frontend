@@ -27,6 +27,11 @@ export class TranslatorComponent extends Destroyable {
     private _postTranslationService: PostTranslationsService
   ) {
     super();
+    //wake BE up:
+    this._postTranslationService
+      .postTranslation('')
+      .pipe(takeUntil(this._destroy))
+      .subscribe();
   }
 
   public sendTranslationRequest() {
