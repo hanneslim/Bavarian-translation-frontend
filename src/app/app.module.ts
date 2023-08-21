@@ -23,6 +23,7 @@ import { ImpressumComponent } from './pages/legal-notice/impressum/impressum.com
 import { PrivacyPolicyComponent } from './pages/legal-notice/privacy-policy/privacy-policy.component';
 import { ToastModule } from 'primeng/toast';
 import { BookAdComponent } from './shared/ui/book-ad/book-ad.component';
+import { AdsenseModule } from 'ng2-adsense';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { BookAdComponent } from './shared/ui/book-ad/book-ad.component';
     InputTextModule,
     TabViewModule,
     ToastModule,
+    AdsenseModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],
