@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://dialektl.com/sitemap.xml
