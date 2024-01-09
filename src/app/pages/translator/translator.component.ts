@@ -27,25 +27,16 @@ export class TranslatorComponent extends Destroyable {
     private _postTranslationService: PostTranslationsService
   ) {
     super();
-    //wake BE up:
-    this._postTranslationService
-      .postTranslation('')
-      .pipe(takeUntil(this._destroy))
-      .subscribe();
   }
 
   public sendTranslationRequest() {
     this.activateSpinner = true;
     const text = this.translatorForm.controls.germanText.getRawValue();
-    this._postTranslationService
-      .postTranslation(text)
-      .pipe(takeUntil(this._destroy))
-      .subscribe((translation) => {
-        this.translatorForm.controls.bavarianText.setValue(
-          translation.bavarianText
-        );
-        this.activateSpinner = false;
-      });
+
+    this.translatorForm.controls.bavarianText.setValue(
+      this._postTranslationService.extractAndReplaceWords(text)
+    );
+    this.activateSpinner = false;
   }
 
   public deleteText() {
